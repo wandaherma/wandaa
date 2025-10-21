@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Wanda — Personal Page</title>
+  <style>
+    :root{
+      --bg:#f3efe9;
+      --card:#ffffff;
+      --accent:#9b7c6b;
+      --muted:#8b8b8b;
+      --radius:18px;
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      min-height:100vh;
+      background:linear-gradient(90deg,var(--bg) 55%, #a08572 55%);
+      color:#222;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:28px;
+    }
+
+    .container{
+      width:1100px;
+      max-width:96%;
+      height:640px;
+      background:transparent;
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:28px;
+      align-items:center;
+      position:relative;
+    }
+
+    /* Left card */
+    .card-wrap{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      height:100%;
+    }
+    .card{
+      width:92%;
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:36px;
+      box-shadow: 0 18px 40px rgba(30,30,30,0.08);
+      border:1px solid rgba(0,0,0,0.03);
+    }
+
+    .logo{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      margin-bottom:12px;
+    }
+    .logo .eye{
+      width:42px;height:42px;border-radius:10px;
+      background:linear-gradient(135deg,#c6a78f,#8f6f5a);
+      display:flex;align-items:center;justify-content:center;color:white;font-weight:700;
+      box-shadow:0 6px 14px rgba(0,0,0,0.08);
+    }
+    .logo h4{margin:0;font-size:15px;color:var(--muted);}
+
+    .title{
+      margin-top:6px;
+      font-size:24px;
+      font-weight:700;
+      color:#2b2b2b;
+    }
+    .subtitle{
+      color:var(--muted);
+      margin:12px 0 20px;
+      line-height:1.5;
+      font-size:14px;
+    }
+
+    .meta{
+      display:flex;
+      gap:12px;
+      font-size:14px;
+      margin-bottom:22px;
+    }
+    .meta .pill{
+      background:#fbf7f4;padding:10px 12px;border-radius:12px;border:1px solid rgba(0,0,0,0.04);
+    }
+
+    .about{
+      font-size:14px;color:#555;line-height:1.6;
+      height:140px; overflow:auto;
+      padding-right:6px;
+    }
+
+    .cta{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      margin-top:18px;
+    }
+    .btn{
+      background:var(--accent);
+      color:white;padding:12px 18px;border-radius:10px;border:none;cursor:pointer;font-weight:600;
+      box-shadow:0 8px 18px rgba(155,124,107,0.18);
+    }
+    .socials{display:flex;gap:10px;margin-left:auto}
+    .socials a{
+      display:inline-block;width:36px;height:36px;border-radius:8px;background:#f4f1ee;
+      display:flex;align-items:center;justify-content:center;text-decoration:none;color:var(--muted);font-weight:700;
+      border:1px solid rgba(0,0,0,0.03);
+    }
+
+    /* Right hero */
+    .hero{
+      height:100%;
+      display:flex;
+      align-items:center;
+      justify-content:flex-end;
+      padding-right:18px;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero img{
+      width:560px;
+      max-width:100%;
+      height:auto;
+      border-radius:18px 0 0 18px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+      transform:translateX(10px);
+    }
+
+    .outline-text{
+      position:absolute;
+      right:48px;
+      top:40%;
+      font-size:120px;
+      font-weight:800;
+      -webkit-text-stroke:2px rgba(255,255,255,0.12);
+      color:transparent;
+      letter-spacing:6px;
+      pointer-events:none;
+      user-select:none;
+    }
+
+    /* small footer inside card */
+    .card-footer{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      margin-top:18px;color:var(--muted);font-size:13px;
+    }
+
+    /* responsive */
+    @media (max-width:900px){
+      .container{grid-template-columns:1fr; height:auto; gap:18px}
+      .hero{justify-content:center;padding:0}
+      .hero img{width:92%; transform:translateX(0)}
+      .outline-text{display:none}
+    }
+
+    /* simple arrow animation */
+    .scroll-clue{position:absolute;left:50%;transform:translateX(-50%);bottom:-18px;font-size:13px;color:var(--muted);display:flex;flex-direction:column;align-items:center;gap:6px}
+    .arrow{width:22px;height:22px;border-left:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:rotate(-45deg);animation: bob 1.6s infinite;}
+    @keyframes bob{0%{transform:translateY(0) rotate(-45deg)}50%{transform:translateY(8px) rotate(-45deg)}100%{transform:translateY(0) rotate(-45deg)}}
+  </style>
+</head>
+<body>
+  <main class="container" role="main">
+    <!-- LEFT CARD -->
+    <section class="card-wrap" aria-label="Informasi Wanda">
+      <article class="card">
+        <div class="logo">
+          <div class="eye">W</div>
+          <h4>Wanda — Personal</h4>
+        </div>
+
+        <h1 class="title">Wanda Herma</h1>
+        <div class="meta">
+          <div class="pill">Jurusan: Matematika Murni</div>
+          <div class="pill">Hobi: Menulis · Membaca</div>
+        </div>
+
+        <p class="subtitle">Definisi singkat — siapa Wanda?</p>
+        <div class="about">
+          <p><strong>Wanda</strong> adalah mahasiswa Matematika Murni yang menyukai eksplorasi ide, menulis cerita pendek, dan membaca buku untuk memperluas wawasan. Ia tertarik pada pemodelan matematika, penyelesaian persamaan diferensial parsial, dan aplikasi analitis lainnya.</p>
+
+          <p>Dalam keseharian, Wanda menikmati menulis catatan kreatif, berdiskusi tentang teori, dan mengerjakan soal-soal menantang. Ia percaya proses belajar yang konsisten dan refleksi menjadikan kemampuan matematika berkembang.</p>
+        </div>
+
+        <div class="cta" aria-hidden="false">
+          <button class="btn" onclick="location.href='#contact'">Kontak</button>
+
+          <div class="socials" aria-label="Sosial Wanda">
+            <!-- Ganti '#' dengan tautanmu -->
+            <a href="#" title="WhatsApp">WA</a>
+            <a href="#" title="Instagram">IG</a>
+            <a href="#" title="TikTok">TT</a>
+          </div>
+        </div>
+
+        <div class="card-footer">
+          <div>Based in: Indonesia</div>
+          <div>Belajar &amp; Berkarya ✦</div>
+        </div>
+      </article>
+    </section>
+
+    <!-- RIGHT HERO -->
+    <aside class="hero" aria-label="Foto Wanda">
+      <!-- Ganti src ke foto kamu. jika perlu gunakan ukuran besar (≥1200px) -->
+      <img src="potosaya.jpeg" alt="Foto Wanda (ganti dengan fotomu)">
+      <div class="outline-text">WANDA</div>
+    </aside>
+
+    <div class="scroll-clue" aria-hidden="true">
+      <div>Scroll</div>
+      <div class="arrow"></div>
+    </div>
+  </main>
+
+  <!-- simple contact modal section (anchor) -->
+  <section id="contact" style="max-width:900px;margin:30px auto;padding:18px;border-radius:12px;background:#fff;box-shadow:0 10px 30px rgba(0,0,0,0.06);display:none;">
+    <h3>Kontak Wanda</h3>
+    <p>WA :081917730381 </p>.
+    <p>IG : https://www.instagram.com/hermaaaaa___?igsh=aGRtZ2EyN29obWtt</p>
+    <p>tiktok : https://www.tiktok.com/@hrmaa0_?_t=ZS-90foRA7DRfm&_r=1</p>
+  </section>
+
+  <script>
+    // Optional: buka kontak saat tombol ditekan -> menampilkan section
+    document.querySelector('.btn').addEventListener('click', (e)=>{
+      const sec = document.getElementById('contact');
+      sec.style.display = sec.style.display === 'block' ? 'none' : 'block';
+      sec.scrollIntoView({behavior:'smooth'});
+    });
+  </script>
+</body>
+</html>
