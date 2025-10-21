@@ -213,7 +213,7 @@
     <!-- RIGHT HERO -->
     <aside class="hero" aria-label="Foto Wanda">
       <!-- Ganti src ke foto kamu. jika perlu gunakan ukuran besar (≥1200px) -->
-      <img src="potosaya.jpeg" alt="Foto Wanda (ganti dengan fotomu)">
+      <img src="potosaya.jpeg.jpeg" alt="Foto Wanda (ganti dengan fotomu)">
       <div class="outline-text">WANDA</div>
     </aside>
 
